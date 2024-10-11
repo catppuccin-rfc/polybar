@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup catppuccin/whiskers
+        uses: catppuccin/setup-whiskers@v1
+        with:
+          whiskers-version: 2.2.0
+      - run: whiskers --version
