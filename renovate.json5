@@ -8,11 +8,11 @@
         "^.*.tera$"
       ],
       "matchStrings": [
-        '( *)?version: "?(?<currentValue>.?(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*))"?'
+        '( *)?version: (?<currentValue>.*?)\n'
       ],
       "depNameTemplate": "catppuccin/whiskers",
       "extractVersionTemplate": "^v?(?<version>.*)$",
-      "versioningTemplate": "npm",
+      "versioningTemplate": "cargo",
       "datasourceTemplate": "github-tags"
     }
   ]
