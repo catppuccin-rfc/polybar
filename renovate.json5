@@ -8,7 +8,7 @@
         "^.*.tera$"
       ],
       "matchStrings": [
-        '( *)?version: (?<currentValue>.*?)\n'
+        '( *)?version: *"?(?<currentValue>"?(?:[\^~<>=]*[\d\*]+(?:\.[\d\*]+)?(?:\.[\d\*]+)?,?)+)"?'
       ],
       "depNameTemplate": "catppuccin/whiskers",
       "extractVersionTemplate": "^v?(?<version>.*)$",
