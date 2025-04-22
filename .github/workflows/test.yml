@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup catppuccin/whiskers
-        uses: catppuccin/setup-whiskers@v1
+        uses: catppuccin/setup-whiskers@v2
         with:
           whiskers-version: ^2.2.0
       - run: whiskers --version
