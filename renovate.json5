@@ -1,6 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchDepNames": [
+        "catppuccin/whiskers"
+      ],
+      "prBodyNotes": [
+        "> [!IMPORTANT]\n> **You do not have to merge this Pull Request.** You can view the latest features and bug fixes by clicking the dropdown under the **Release Notes** section.",
+        "> [!WARNING]\n> You may need to edit the template accordingly before merging this Pull Request."
+      ]
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
@@ -9,6 +19,19 @@
       ],
       "matchStrings": [
         'version: "?(?<currentValue>[^"\n]*)"?'
+      ],
+      "depNameTemplate": "catppuccin/whiskers",
+      "extractVersionTemplate": "^v?(?<version>.*)$",
+      "versioningTemplate": "cargo",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.*.yml$"
+      ],
+      "matchStrings": [
+        'whiskers-version: "?(?<currentValue>[^"\n]*)"?'
       ],
       "depNameTemplate": "catppuccin/whiskers",
       "extractVersionTemplate": "^v?(?<version>.*)$",
